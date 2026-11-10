@@ -147,7 +147,7 @@ html[lang="ar"] .hero h1{font-size:clamp(3.2rem,8.4vw,8rem);line-height:1.2;max-
 /* ---------- statement + veil ---------- */
 .art{padding-block:clamp(90px,13vw,190px);background:var(--plaster)}
 .art-grid{display:grid;gap:clamp(40px,6vw,90px);align-items:center}
-.statement{font-family:var(--display);font-size:clamp(1.9rem,4.3vw,4rem);line-height:1.12;letter-spacing:-.01em}
+.statement{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,4vw,3.7rem);line-height:1.16;letter-spacing:-.005em;font-variation-settings:'opsz' 30}
 html[lang="ar"] .statement{font-family:var(--arabic);line-height:1.5;font-size:clamp(1.9rem,3.9vw,3.5rem)}
 .statement .w{display:inline-block}
 .veil{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:var(--stone);touch-action:pan-y;cursor:crosshair}
@@ -984,7 +984,7 @@ function buildMotion(rebuild){
     gsap.to('.hero-bg img',{yPercent:10,scale:1.14,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
     gsap.to('#hero-window',{yPercent:-22,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
     // statement: words come into ink as you read
-    gsap.fromTo('#statement .w',{opacity:.16},{opacity:1,stagger:.08,ease:'none',scrollTrigger:{trigger:'#statement',start:'top 78%',end:'bottom 45%',scrub:true}});
+    gsap.fromTo('#statement .w',{opacity:.42},{opacity:1,stagger:.08,ease:'none',scrollTrigger:{trigger:'#statement',start:'top 85%',end:'bottom 70%',scrub:true}});
     // the veil opens as the section passes
     ScrollTrigger.create({trigger:'#veil',start:'top 80%',end:'bottom 20%',scrub:true,onUpdate:function(s){ window.__veilOpen(Math.sin(s.progress*Math.PI)*.75); }});
     // band slides with scroll
